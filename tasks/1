@@ -1,0 +1,6 @@
+---
+# tasks file for sshcopy
+- name: copying the id.rsa
+  file: path=/home/vijay/.ssh/authorized_key state=touch owner=vijay mode=0755
+  copy: src='id_rsa.pub' dest='/home/vijay/.ssh/authorized_key'
+  

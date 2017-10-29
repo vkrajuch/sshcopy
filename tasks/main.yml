@@ -1,0 +1,10 @@
+---
+# tasks file for sshcopy
+ - name: create .ssh directory
+   file: path=/home/satish/.ssh state=directory owner=satish mode=0700
+
+ - name: copying the idrsa to authorized_keys
+   file: path=/home/satish/.ssh/authorized_keys state=touch owner=satish mode=0600
+ - copy:
+      src: id_rsa.pub
+      dest: /home/satish/.ssh/authorized_keys 
